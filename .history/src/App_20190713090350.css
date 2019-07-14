@@ -1,0 +1,11 @@
+.logincss{
+  height: 94vh;
+  min-height: 94vh;
+  display: flex;
+  align-items: center !important;
+  flex-direction: row !important
+}
+
+.form-control{
+  width:95%;
+}

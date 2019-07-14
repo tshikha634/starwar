@@ -1,0 +1,106 @@
+body{
+  background-color: #1abb9c;
+}
+.bg-primary {
+  background-color: #083650 !important;
+}
+.login-board {
+  opacity: 30%;
+}
+.primary {
+  background-color: #198615 !important;
+}
+
+.label{
+  position: absolute;
+  float: left;
+  font-size: 20px;
+  margin-top: 22px;
+  padding-right: 20px;
+}
+.loginButton{
+  display: inline-block;
+  position: absolute;
+  margin-top: 230px;
+  margin-left: 40px;
+}
+.logoutButton{
+  position: absolute;
+    margin: 230px;
+    display: inline-block;
+}
+
+.card-header {
+  background-color: #a7acaa;
+  font-size: 30px;
+  padding: 10px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 30px;
+}
+.card-body {
+  background-color: #fff;
+  background-color: #fff;
+  position: absolute;
+  right: 500px;
+  width: 500px;
+  height: 400px;
+  top:100px;
+}
+
+/* .lastLogin {
+  font-size: 12.5px;
+  color: grey;
+  padding-top: 15px;
+} */
+/* .logincss {
+  height: 94vh;
+  min-height: 94vh;
+  display: flex;
+  align-items: center !important;
+  flex-direction: row !important;
+} */
+
+/* .logout {
+  text-align: center;
+  margin-top: 200px;
+} */
+
+.form-control {
+  width: 60%;
+  float: right;
+  height: 24px;
+  border: 2px solid cadetblue;
+  border-radius: 6px;
+  margin: 24px;
+}
+
+.errorMsg {
+  color: red;
+  font-weight: normal;
+  margin-right:100px;
+  float: right;
+
+}
+
+.Loader {
+  height: 100%;
+  width: 0;
+  position: fixed;
+ /* Stay in place */
+  z-index: 10;
+ /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.4);
+ /* Black fallback color */
+ /* Black w/opacity */
+  overflow-x: hidden;
+ /* Disable horizontal scroll */
+  transition: 0.5s;
+}
+.Select-input {
+  position: absolute !important;
+  width: 99%;
+}

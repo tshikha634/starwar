@@ -1,0 +1,47 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Tahoma,Verdana,Segoe,sans-serif; 
+  font-size: 14px;
+  background: #f6fffd;
+  padding: 20px;
+  text-align: center;
+}
+
+.logincss{
+  height: 94vh;
+  min-height: 94vh;
+  display: flex;
+  align-items: center !important;
+  flex-direction: row !important;
+}
+
+.form-control{
+  width:50%;
+  float: left;
+}
+
+
+.card-body {
+  background-color: #fff;
+  position: relative;
+  left:400px;
+  height: 400px;
+  width: 500px;
+  border: 2px solid rgb(18, 26, 23);
+}
+
+.cardTrans{
+  min-width: 98%;
+  margin: 12px;
+  margin-top:25px;
+}
+
+.label{
+  font-size: larger;
+  font-style: italic;
+  float: left;
+  margin: 20px;
+}
