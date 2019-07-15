@@ -23,7 +23,7 @@ export class SearchPlanets extends Component {
     this.state = {
       isLoading: false,
       search: {},
-      limit: 10,
+      limit: 15,
       offset: 1,
       name:"",
     };
@@ -42,11 +42,12 @@ export class SearchPlanets extends Component {
   onSearchClick = () => {
     debugger
     this.setState({
-      limit:10,
+      name:'',
+      limit:15,
       offset: 1
     }, () => {
       const t = {
-        name: this.state.name,
+        name: escape(this.state.name),
         limit:this.state.limit,
         offset:this.state.offset
       }
@@ -58,7 +59,7 @@ export class SearchPlanets extends Component {
   onClear() {
     debugger
     this.setState({
-      limit: 10,
+      limit: 15,
       offset: 1,
       name:"",
     }, () => {
@@ -88,7 +89,7 @@ export class SearchPlanets extends Component {
   async getPlanetList() {
     try {
       this.props.getPlanetsListAction();
-      let params = `limit=${this.state.limit}&offset=${this.state.offset}&name=${this.state.name}`;
+      let params = `limit=${this.state.limit}&offset=${this.state.offset}`;
       let PlanetList = await this.SearchService.getPlanetsByName(params);
       this.props.getPlanetsListActionSuccess(PlanetList);
       console.log(PlanetList)
@@ -100,8 +101,6 @@ export class SearchPlanets extends Component {
     debugger
     this.setState({
       name: event.target.value
-    },() => {
-      console.log(this.state.name)
     });
   }
   renderPlanetList() {

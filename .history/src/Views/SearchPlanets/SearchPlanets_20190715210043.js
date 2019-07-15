@@ -23,7 +23,7 @@ export class SearchPlanets extends Component {
     this.state = {
       isLoading: false,
       search: {},
-      limit: 10,
+      limit: 15,
       offset: 1,
       name:"",
     };
@@ -42,7 +42,8 @@ export class SearchPlanets extends Component {
   onSearchClick = () => {
     debugger
     this.setState({
-      limit:10,
+      name:'',
+      limit:15,
       offset: 1
     }, () => {
       const t = {
@@ -58,7 +59,7 @@ export class SearchPlanets extends Component {
   onClear() {
     debugger
     this.setState({
-      limit: 10,
+      limit: 15,
       offset: 1,
       name:"",
     }, () => {
@@ -88,7 +89,7 @@ export class SearchPlanets extends Component {
   async getPlanetList() {
     try {
       this.props.getPlanetsListAction();
-      let params = `limit=${this.state.limit}&offset=${this.state.offset}&name=${this.state.name}`;
+      let params = `limit=${this.state.limit}&offset=${this.state.offset}`;
       let PlanetList = await this.SearchService.getPlanetsByName(params);
       this.props.getPlanetsListActionSuccess(PlanetList);
       console.log(PlanetList)
@@ -97,11 +98,8 @@ export class SearchPlanets extends Component {
     }
   }
   onChange = event => {
-    debugger
     this.setState({
-      name: event.target.value
-    },() => {
-      console.log(this.state.name)
+      status: event.target.value
     });
   }
   renderPlanetList() {
@@ -129,7 +127,7 @@ export class SearchPlanets extends Component {
   }
   render() {
     return (
-      <div>
+      <div class="container">
         <Navbar />
         <Card className="borderNone">
           <CardBody>
@@ -137,7 +135,7 @@ export class SearchPlanets extends Component {
               <Table class="table table-bordered table-inverse">
                 <thead>
                   <tr>
-                    <th>
+                    <th width="10%">
                       <Input
                         className="formControl"
                         type="text"
@@ -148,8 +146,7 @@ export class SearchPlanets extends Component {
                         placeholder="Planet Name"
                       />
                     </th>
-<th></th>
-<th></th>
+
                     <th>
                       
                       <Button
@@ -159,8 +156,6 @@ export class SearchPlanets extends Component {
                       >
                         Search
                       </Button>
-                      </th>
-                      <th>
                       <Button
                         id="clearSearch"
                         onClick={this.onClear}
