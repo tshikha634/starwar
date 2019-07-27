@@ -21,6 +21,11 @@
   background-color: #ffffff;
 }
 
+.pagination {
+  display: flex;
+  float: right;
+  /* list-style-type: none; */
+}
 
 form {
   width: 100%;
@@ -190,12 +195,12 @@ input::placeholder {
  .topnav-right {
    float: right;
  }
-.pagination{
+/* .pagination{
   display: flex; 
   float: right;
   margin:2px;
   list-style-type: none;
-}
+} */
 
 .table{
   margin: 10px;

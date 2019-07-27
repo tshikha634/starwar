@@ -178,11 +178,11 @@ export class SearchPlanets extends Component {
        
      );
     return (
-      <div>
+      <div class="container">
         <Navbar />
         {/* <Loader loading={this.state.isLoader}> </Loader> */}
         {/* <Card className="borderNone"> */}
-          {/* <CardBody> */}
+          <CardBody>
             <div className="table">
               <Row>
                 <Col sm={{ size: 4, offset: 6 }}>
@@ -234,7 +234,7 @@ export class SearchPlanets extends Component {
                   itemsCountPerPage={this.state.limit}
                 />
                 </div>
-          {/* </CardBody> */}
+          </CardBody>
         {/* </Card> */}
       </div>
     );

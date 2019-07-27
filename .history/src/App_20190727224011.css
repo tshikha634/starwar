@@ -125,8 +125,11 @@ input::placeholder {
 .list{
   list-style-type: none;
   margin:20px;
-  border: 1px solid brown;
   padding:5px;
+}
+
+.result{
+  border:1px brown;
 }
 .site-button {
    background-color: brown;

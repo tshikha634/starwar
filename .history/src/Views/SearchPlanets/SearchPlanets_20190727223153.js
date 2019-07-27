@@ -122,9 +122,9 @@ export class SearchPlanets extends Component {
   renderPlanetList() {
     debugger;
     return this.props.searchPlanet.data.results.map((item, index) => {
-       return (<ul>    
+       return (<ul>
+     
             <li key={item.index} className="list">
-              <div>
               <Row>
                 <Col>
                   <Label>Name</Label>
@@ -164,10 +164,8 @@ export class SearchPlanets extends Component {
                   <Label>Terrain</Label>
                 </Col>
                 <Col>{item && item.terrain ? item.terrain : ""}</Col>
- </Row>
- </div>
-           </li>
-           
+              </Row>
+            </li>
           </ul>);
     });
   }
@@ -178,11 +176,11 @@ export class SearchPlanets extends Component {
        
      );
     return (
-      <div>
+      <div class="container">
         <Navbar />
         {/* <Loader loading={this.state.isLoader}> </Loader> */}
-        {/* <Card className="borderNone"> */}
-          {/* <CardBody> */}
+        <Card className="borderNone">
+          <CardBody>
             <div className="table">
               <Row>
                 <Col sm={{ size: 4, offset: 6 }}>
@@ -234,8 +232,8 @@ export class SearchPlanets extends Component {
                   itemsCountPerPage={this.state.limit}
                 />
                 </div>
-          {/* </CardBody> */}
-        {/* </Card> */}
+          </CardBody>
+        </Card>
       </div>
     );
   }

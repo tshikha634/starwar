@@ -6,6 +6,7 @@ export class SearchService {
   }
 
   public async getPlanetsByName(params:any) {
+    debugger
     if(params){
     return this.dataProvider.GetData(`planets/?search${params}`)
   }

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Navbar from "../Navbar"
 import { stringify } from 'query-string'
 import Pagination from "react-js-pagination";
-import { Input, CardBody, Table, Card, Row, Col,Label } from "reactstrap";
+// import { Input, CardBody, Table, Card, Row, Col,Label } from "reactstrap";
 import {
   getPlanetsListAction,
   getPlanetsListActionSuccess,
@@ -178,11 +178,11 @@ export class SearchPlanets extends Component {
        
      );
     return (
-      <div>
+      <div class="container">
         <Navbar />
         {/* <Loader loading={this.state.isLoader}> </Loader> */}
-        {/* <Card className="borderNone"> */}
-          {/* <CardBody> */}
+        <Card className="borderNone">
+          <CardBody>
             <div className="table">
               <Row>
                 <Col sm={{ size: 4, offset: 6 }}>
@@ -234,8 +234,8 @@ export class SearchPlanets extends Component {
                   itemsCountPerPage={this.state.limit}
                 />
                 </div>
-          {/* </CardBody> */}
-        {/* </Card> */}
+          </CardBody>
+        </Card>
       </div>
     );
   }

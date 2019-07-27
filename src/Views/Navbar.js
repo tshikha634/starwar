@@ -12,15 +12,13 @@ class Navbar extends Component {
   }
   render() {
     return (
-      <div>
-        <div>
-          <ul id="nav">
-            <li>
-              <a id="Logout" onClick={e => this.onLogout(e)}>
-                <i className="fa fa-lock" /> Logout
-              </a>
-            </li>
-          </ul>
+      <div class="topnav">
+        <a class="active" href="#home">
+          Home
+        </a>
+        
+        <div class="topnav-right">
+          <a href="{{url('/')}}">Logout</a>
         </div>
       </div>
     );
