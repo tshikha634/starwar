@@ -1,0 +1,208 @@
+.wrapper {
+  height: 100vh; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/st2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-wrapper {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 50px #555;
+  background-color: #ffffff;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
+  width: 100%;
+  color: brown;
+  font-weight: lighter;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+label {
+  font-size: 0.8em;
+  margin-bottom: 0.25em;
+  color: brown;
+  font-weight: lighter;
+}
+
+input {
+  padding: 10px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #cfcfcf;
+}
+
+input::placeholder {
+  font-size: 1.2em;
+  font-weight: lighter;
+  color: #999;
+}
+
+
+.errorMsg {
+  color: red;
+  font-size: 0.75em;
+  display: relative;
+}
+
+.userName {
+  margin-right: 1%;
+}
+
+
+.userName,
+.password {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.userName,
+.password {
+  width: 100%;
+}
+
+.createAccount {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.createAccount button {
+  background-color: chocolate;
+  color: #fff;
+  border: 2px solid #fff;
+  width: 100%;
+  margin-top: 1em;
+  padding: 8px 0px;
+  font-size: 1em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  margin-bottom: 0.25em;
+}
+
+.createAccount button:hover {
+  color: brown;
+  background-color: #fff;
+  border: 2px solid #519e8a;
+}
+
+.createAccount small {
+  color: #999;
+  font-weight: lighter;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: brown;
+  border-color: #6c757d;
+}
+
+/* .btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; */
+
+.site-button {
+   background-color: brown;
+  color: #fff;
+  border: 2px solid #fff;
+  margin-top: 1em;
+  /* padding: 8px 0px; */
+  font-size: 1em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  margin-bottom: 0.25em; 
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+}
+
+.site-button:hover {
+  color: #fff;
+  background-color: chocolate;
+  border-color: brown;
+}
+
+
+.topnav {
+  background-color: chocolate;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+ float: left;
+ color: #f2f2f2;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+ font-size: 17px;
+ }
+
+ /* Change the color of links on hover */
+ .topnav a:hover {
+   background-color: brown;
+   color: black;
+ }
+
+ /* Add a color to the active/current link */
+ .topnav a.active {
+   background-color: brown;
+   color: white;
+ }
+
+ /* Right-aligned section inside the top navigation */
+ .topnav-right {
+   float: right;
+ }
+.pagination{
+  display: flex; 
+  float: right;
+  list-style-type: none;
+}
+
+.table{
+  margin: 10px;
+    padding: 10px;
+    border: 1px solid #069;
+}
