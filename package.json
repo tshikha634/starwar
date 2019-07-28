@@ -12,6 +12,7 @@
     "prop-types": "^15.7.2",
     "query-string": "^6.8.1",
     "react": "^16.8.6",
+    "react-awesome-modal": "^2.0.5",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.8.6",
     "react-js-pagination": "^3.0.2",
