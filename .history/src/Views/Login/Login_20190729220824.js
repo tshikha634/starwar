@@ -38,6 +38,9 @@ export class Login extends Component {
   componentDidMount() {
     this.login();
   }
+  componentWillMount() {
+    console.log(this.props);
+  }
 
   renderErrors(key) {
     return this.state.errors[key]
