@@ -1,5 +1,5 @@
 .wrapper {
-  height: 100vh; 
+  height: 100%; 
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -157,9 +157,8 @@ input::placeholder {
 }
 
 .Loader{
-  display: inline-flex;
+  display: block;
   position: absolute;
-  padding-top: 20%;
   font-size: 30px; 
 }
 .row1{

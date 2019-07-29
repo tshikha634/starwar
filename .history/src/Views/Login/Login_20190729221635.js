@@ -127,7 +127,7 @@ export class Login extends Component {
 
         <div className="wrapper">
           <div className="form-wrapper">
-            <h1>Login...</h1>
+            <h1>Login into your account</h1>
 
             <div className="userName">
               <label htmlFor="userName">User Name</label>
