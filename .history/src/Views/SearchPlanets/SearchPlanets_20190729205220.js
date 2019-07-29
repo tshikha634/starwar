@@ -44,7 +44,6 @@ export class SearchPlanets extends Component {
     this.onChange = this.onChange.bind(this);
     this.renderPlanetList = this.renderPlanetList.bind(this);
     this.redirectTOCreate = this.redirectTOCreate.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
   componentDidMount() {
     this.getPlanetList();
@@ -63,6 +62,7 @@ export class SearchPlanets extends Component {
       terrain: this.state.terrain,
       climate: this.state.climate
     };
+    console.log("name", this.state.name);
     this.getPlanetList(stringify(field));
   };
 
@@ -92,6 +92,7 @@ export class SearchPlanets extends Component {
     );
   }
   onChangePage = page => {
+    debugger;
     this.setState(
       {
         offset: page,
@@ -107,14 +108,17 @@ export class SearchPlanets extends Component {
     this.setState({
       isLoader : true
     });
+    debugger;
     try {
       this.props.getPlanetsListAction();
+
       let params = `=${this.state.name}&page=${this.state.offset}`;
       let PlanetList = await this.SearchService.getPlanetsByName(params);
       this.props.getPlanetsListActionSuccess(PlanetList);
       this.setState({
         isLoader : false
       });
+      console.log("PlanetLists", PlanetList);
     } catch (err) {
       this.props.getPlanetsListActionFailure(err);
     }
@@ -125,6 +129,11 @@ export class SearchPlanets extends Component {
     });
   };
   redirectTOCreate = (data) => {
+    // this.props.history.push(`/planetdetails`);
+    // <div>
+    //   <PlanetDetails
+    //   props={this.props.searchPlanet}
+    //   />
     this.setState({
       popupdata: data
     }, () => {
@@ -134,7 +143,7 @@ export class SearchPlanets extends Component {
     });
   };
 
-  closeModal = () => {
+  onCloseButton = () => {
     this.setState({
       showPopup: false,
     });
@@ -142,6 +151,7 @@ export class SearchPlanets extends Component {
 
 
   renderPlanetList() {
+    debugger;
     return this.props.searchPlanet.data.results.map((item, index) => {
       return (
         <div>
@@ -155,7 +165,7 @@ export class SearchPlanets extends Component {
                         title="name"
                         className="hyperlink"
                         href=""
-                        onClick={() => this.redirectTOCreate(item)}
+                        onClick={ () => this.redirectTOCreate(item)}
                       >
                         {item.name}
                       </span>
@@ -229,6 +239,7 @@ export class SearchPlanets extends Component {
                 itemsCountPerPage={this.state.limit}
               />
             </div>
+            (
             <Modal
               visible={this.state.showPopup}
               width="800"
@@ -241,6 +252,7 @@ export class SearchPlanets extends Component {
                 searchPlanet={this.state.popupdata}
               />
             </Modal>
+            )
           </CardBody>
         </Card>
       </div>

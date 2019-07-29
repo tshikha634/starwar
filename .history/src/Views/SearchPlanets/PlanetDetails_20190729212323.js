@@ -12,7 +12,7 @@ export class PlanetDetails extends Component {
         {/* {this.props.searchPlanet.population > this.props.searchPlanet.population} */}
         {this.props.searchPlanet ? (
           <div className="Planetcontainer">
-            <Row className="row1">
+            <Row>
               <Col>
                 <Label>Name</Label>
               </Col>
@@ -30,7 +30,7 @@ export class PlanetDetails extends Component {
                   : ""}
               </Col>
             </Row>
-            <Row className="row1">
+            <Row>
               <Col>
                 <Label>Climate</Label>
               </Col>
@@ -48,7 +48,7 @@ export class PlanetDetails extends Component {
                   : ""}
               </Col>
             </Row>
-            <Row className="row1">
+            <Row>
               <Col>
                 <Label>Rotation Period</Label>
               </Col>
@@ -66,7 +66,7 @@ export class PlanetDetails extends Component {
                   : ""}
               </Col>
             </Row>
-            <Row className="row1">
+            <Row>
               <Col>
                 <Label>Population</Label>
               </Col>

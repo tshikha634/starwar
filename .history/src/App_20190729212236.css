@@ -160,21 +160,10 @@ input::placeholder {
   border-radius: 0.25rem;
 }
 
-.Loader{
-  display: block;
-  margin-top: 30%;
-  margin-left: 50%;
-  font-size: 30px; 
-}
-.row1{
-  font-size: 20px;
-}
-.Planetcontainer {
+.Planetcontainer{
       margin-top: 50px;
       margin-right: 20px;
       margin-left: 20px;
-      padding: 10px;
-      height: 199px;
       border: 2px solid brown;
       align-items: center;
 }

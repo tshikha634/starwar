@@ -44,7 +44,6 @@ export class SearchPlanets extends Component {
     this.onChange = this.onChange.bind(this);
     this.renderPlanetList = this.renderPlanetList.bind(this);
     this.redirectTOCreate = this.redirectTOCreate.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
   componentDidMount() {
     this.getPlanetList();
@@ -134,7 +133,7 @@ export class SearchPlanets extends Component {
     });
   };
 
-  closeModal = () => {
+  onCloseButton = () => {
     this.setState({
       showPopup: false,
     });

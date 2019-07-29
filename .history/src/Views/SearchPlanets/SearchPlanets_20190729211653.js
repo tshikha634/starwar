@@ -134,7 +134,7 @@ export class SearchPlanets extends Component {
     });
   };
 
-  closeModal = () => {
+  onCloseButton = () => {
     this.setState({
       showPopup: false,
     });

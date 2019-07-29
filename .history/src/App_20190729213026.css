@@ -161,10 +161,7 @@ input::placeholder {
 }
 
 .Loader{
-  display: block;
-  margin-top: 30%;
-  margin-left: 50%;
-  font-size: 30px; 
+  align-content: center;
 }
 .row1{
   font-size: 20px;

@@ -1,0 +1,121 @@
+import React, { Component } from 'react'
+import { Input, Row, Col, Label } from "reactstrap";
+
+
+class Planets extends Component{
+constructor(props) {
+    super(props);
+    this.state = {
+      
+    };
+    // bind context to methods
+    // this.SearchService = new SearchService();
+    // this.onChangePage = this.onChangePage.bind(this);
+    // this.getPlanetList = this.getPlanetList.bind(this);
+    // this.onSearchClick = this.onSearchClick.bind(this);
+    // this.onClear = this.onClear.bind(this);
+    // this.onChange = this.onChange.bind(this);
+    // this.renderPlanetList = this.renderPlanetList.bind(this);
+  }
+  componentDidMount() {
+    // this.getPlanetList();
+  }
+
+planets = () => {
+// for(var i = 0;i <= this.props.length;i++){
+//    if (this.props.indexOf(i) != -1){
+//      console.log(this.props.slice(i));
+//      return this.props.slice(i)
+//    }
+//   else{
+//     return null
+//    }
+//   }
+}
+  render() {
+    let aa = this.props;
+    return (
+      <div>
+       
+        {this.props.map((index, item) => {
+          this.props.slice(index, 1);
+console.log(this.props.slice(index, 1));
+          return (
+            <li key={index}>
+              <Row>
+                <Col>
+                  <Label>Name</Label>
+                </Col>
+                <Col>{item.name ? item.name : ""}</Col>
+                {/* <Col>
+                  <Label>Diameter</Label>
+                </Col>
+                <Col>
+                  {this.props && this.props.value.diameter
+                    ? this.props.value.diameter
+                    : ""}
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Label>Climate</Label>
+                </Col>
+                <Col>
+                  {this.props && this.props.value.climate
+                    ? this.props.value.climate
+                    : ""}
+                </Col>
+                <Col>
+                  <Label>Gravity</Label>
+                </Col>
+                <Col>
+                  {this.props && this.props.value.gravity
+                    ? this.props.value.gravity
+                    : ""}
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Label>Rotation Period</Label>
+                </Col>
+                <Col>
+                  {this.props && this.props.value.rotation_period
+                    ? this.props.value.rotation_period
+                    : ""}
+                </Col>
+                <Col>
+                  <Label>Orbital Period</Label>
+                </Col>
+                <Col>
+                  {this.props && this.props.value.orbital_period
+                    ? this.props.value.orbital_period
+                    : ""}
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Label>Population</Label>
+                </Col>
+                <Col>
+                  {this.props && this.props.value.population
+                    ? this.props.value.population
+                    : ""}
+                </Col>
+                <Col>
+                  <Label>Terrain</Label>
+                </Col>
+                <Col>
+                  {this.props && this.props.value.terrain
+                    ? this.props.value.terrain
+                    : ""}
+                </Col> */}
+              </Row>
+            </li>
+          );
+        })}
+      </div>
+    );
+  }
+}
+
+export default Planets
