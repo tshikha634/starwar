@@ -1,5 +1,6 @@
+/* eslint-disable */
 import React, { Component } from "react";
-import { Input, Button } from "reactstrap";
+import {Input, Button} from 'reactstrap'
 import {
   getUserProfileAction,
   getUserProfileActionSuccess,
@@ -32,10 +33,13 @@ export class Login extends Component {
   }
 
   redirect = () => {
-    this.props.history.push("/searchplanets");
-  };
+    this.props.history.push('/searchplanets');
+  }
 
   componentDidMount() {
+    // if (localStorage.length !== 0) {
+    //   this.props.history.push("./search")
+    // }
     this.login();
   }
   componentWillMount() {
@@ -51,24 +55,28 @@ export class Login extends Component {
   }
 
   onChange(e) {
-    debugger;
-    let newState = {};
-    let key = e.target.name;
-    newState[key] = e.target.value;
-    this.setState(newState, function() {
-      let validationResult = this.validator.validateField(this.state, key);
-      if (validationResult.valid === false) {
-        return this.setState({
-          isValid: false,
-          errors: validationResult.errors
-        });
-      }
-      return this.setState({ isValid: true, errors: {} });
-    });
+    debugger
+    // let newState = {};
+    // let key = e.target.name;
+    // newState[key] = e.target.value;
+    // this.setState(newState, function() {
+    //   let validationResult = this.validator.validateField(this.state, key);
+    //   if (validationResult.valid === false) {
+    //     return this.setState({
+    //       isValid: false,
+    //       errors: validationResult.errors
+    //     });
+    //   }
+    //   return this.setState({ isValid: true, errors: {} });
+    // });
+this.setState({
+  [event.target.name] : event.target.value
+})
+    // console.log("key,value", newState);
   }
 
   handleChange = e => {
-    debugger;
+    debugger
     if (e.key === "Enter") {
       let validationResult = this.validator.validateState(this.state);
       if (validationResult.valid === false) {
@@ -77,16 +85,8 @@ export class Login extends Component {
           errors: validationResult.errors,
           flag: true
         });
-      } else {
-        return this.setState(
-          {
-            isValid: true,
-            errors: "",
-            flag: false
-          },
-          () => this.login()
-        );
       }
+      this.login();
     }
   };
 
@@ -101,40 +101,39 @@ export class Login extends Component {
         flag: true
       });
     }
-    let result = await this.UserService.validate(this.state.UserName,this.state.password);
+    let result = await this.UserService.validate(this.state.UserName, this.state.password);
     if (this.state.UserName === result.data.results[0].name && this.state.password === result.data.results[0].birth_year) {
       try {
         if (result.success) {
           this.setState({
             isValid: true,
-            errors: "",
-            flag: false
+            errors: '',
+            // flag: true
           });
           this.props.getUserProfileActionSuccess(result.data);
-          this.props.history.push("./searchplanets");
+          this.props.history.push('./searchplanets')
           window.location.reload();
         } else {
-          ToastsStore.error(
-            MESSAGE.WRONG_LOGIN_PASSWORD,
-            MESSAGE.TOAST_INTERVAL
-          );
+          ToastsStore.error(MESSAGE.WRONG_LOGIN_PASSWORD, MESSAGE.TOAST_INTERVAL);
         }
       } catch (e) {
         ToastsStore.error(MESSAGE.OPPS_ERROR, MESSAGE.TOAST_INTERVAL);
       }
     } else {
+      
     }
   };
 
   render() {
+   
     return (
       <div id="frmLogin" className="logincss">
         <ToastsContainer position="top_center" store={ToastsStore} />
-
-        <div className="wrapper">
-          <div className="form-wrapper">
-            <h1>Create Account</h1>
-
+   
+                          <div className="wrapper">
+        <div className="form-wrapper">
+          <h1>Create Account</h1>
+        
             <div className="userName">
               <label htmlFor="userName">User Name</label>
               <Input
@@ -163,16 +162,21 @@ export class Login extends Component {
                 value={this.state.password}
                 onKeyPress={this.handleChange}
               />
-              {this.renderErrors("password")}
+               {this.renderErrors("password")}
             </div>
             <div className="createAccount">
-              <Button id="loginButton" color="primary" onClick={this.login}>
-                Login
-              </Button>
+              <Button 
+              
+              id="loginButton"
+                            color='primary'
+                            onClick={this.login}
+              
+              >Create Account</Button>
               <small>Already Have an Account?</small>
             </div>
-          </div>
+         
         </div>
+      </div>
       </div>
     );
   }

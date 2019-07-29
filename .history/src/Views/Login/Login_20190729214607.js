@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from "react";
 import { Input, Button } from "reactstrap";
 import {
@@ -36,6 +37,9 @@ export class Login extends Component {
   };
 
   componentDidMount() {
+    // if (localStorage.length !== 0) {
+    //   this.props.history.push("./search")
+    // }
     this.login();
   }
   componentWillMount() {

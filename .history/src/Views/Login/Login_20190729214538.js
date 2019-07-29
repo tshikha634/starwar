@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from "react";
 import { Input, Button } from "reactstrap";
 import {
@@ -36,6 +37,9 @@ export class Login extends Component {
   };
 
   componentDidMount() {
+    // if (localStorage.length !== 0) {
+    //   this.props.history.push("./search")
+    // }
     this.login();
   }
   componentWillMount() {
@@ -101,8 +105,14 @@ export class Login extends Component {
         flag: true
       });
     }
-    let result = await this.UserService.validate(this.state.UserName,this.state.password);
-    if (this.state.UserName === result.data.results[0].name && this.state.password === result.data.results[0].birth_year) {
+    let result = await this.UserService.validate(
+      this.state.UserName,
+      this.state.password
+    );
+    if (
+      this.state.UserName === result.data.results[0].name &&
+      this.state.password === result.data.results[0].birth_year
+    ) {
       try {
         if (result.success) {
           this.setState({

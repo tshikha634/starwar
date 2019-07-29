@@ -164,6 +164,14 @@ export class SearchPlanets extends Component {
                     )}
                   </Col>
                 </Row>
+                {(item.population(index + 1) > item.population(index))(
+                  console.log(
+                    "item.population(index + 1)",
+                    item.population(index + 1)
+                  )
+                ) ? (
+                  <div />
+                ) : null}
               </div>
             </li>
           </ul>
