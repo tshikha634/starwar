@@ -52,7 +52,7 @@ it('should render Login', () => {
    );
   expect(UserService).toHaveBeenCalled();
   setTimeout(() => {
-    expect(mockGetUserService).toHaveBeenCalledWith();
+    expect(mockGetUserService).toHaveBeenCalledWith("Yuvin","19BBY");
   }, 20)
 });
 

@@ -50,9 +50,9 @@ it('should render Login', () => {
        <Login />
      </Provider>
    );
-  expect(UserService).toHaveBeenCalled();
+  expect(UserService).toHaveBeenCalled("Yuvin", "19BBY");
   setTimeout(() => {
-    expect(mockGetUserService).toHaveBeenCalledWith();
+    expect(mockGetUserService).toHaveBeenCalledWith("Yuvin","19BBY");
   }, 20)
 });
 

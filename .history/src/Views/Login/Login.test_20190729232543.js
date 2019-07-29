@@ -34,7 +34,7 @@ const store = mockStore({
   searchPlanet: {
     data:{
       results : [
-        {UserName : "Yuvin", password:"19BBY"}
+        {UserName : "yuvin", password:"19BBY"}
       ]
   },
   },
@@ -109,16 +109,16 @@ it('should render Button@0', () => {
   expect(wrapper.find('Button').at(0).simulate("click"))
 });
 
-
-it("should click login button", async () => {
-   const wrapper = mount(
-     <Provider
-       store={store}
-       getUserProfileAction={getUserProfileAction}
-       getUserProfileActionSuccess={getUserProfileActionSuccess}
-     >
-       <Login />
-     </Provider>
-   );
-  wrapper.find("Button#loginButton").simulate("click");
+it("should render handleclick@0", () => {
+  const wrapper = mount(
+    <Provider
+      store={store}
+      getUserProfileAction={getUserProfileAction}
+      getUserProfileActionSuccess={getUserProfileActionSuccess}
+    >
+      <Login />
+    </Provider>
+  );
+  let childWrapper = wrapper.find("Button").simulate("click");
+  expect(childWrapper.find(handleClick)).instance()
 });

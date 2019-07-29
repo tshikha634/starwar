@@ -34,7 +34,7 @@ const store = mockStore({
   searchPlanet: {
     data:{
       results : [
-        {UserName : "Yuvin", password:"19BBY"}
+        {UserName : "yuvin", password:"19BBY"}
       ]
   },
   },
@@ -52,7 +52,7 @@ it('should render Login', () => {
    );
   expect(UserService).toHaveBeenCalled();
   setTimeout(() => {
-    expect(mockGetUserService).toHaveBeenCalledWith();
+    expect(mockGetUserService).toHaveBeenCalledWith("Yuvin","19BBY");
   }, 20)
 });
 

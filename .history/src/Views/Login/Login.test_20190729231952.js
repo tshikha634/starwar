@@ -34,22 +34,16 @@ const store = mockStore({
   searchPlanet: {
     data:{
       results : [
-        {UserName : "Yuvin", password:"19BBY"}
+        {UserName : "yuvin", password:"19BBY"}
       ]
   },
   },
 });
 
 it('should render Login', () => {
-   const wrapper = mount(
-     <Provider
-       store={store}
-       getUserProfileAction={getUserProfileAction}
-       getUserProfileActionSuccess={getUserProfileActionSuccess}
-     >
-       <Login />
-     </Provider>
-   );
+  const wrapper = mount(<Provider store={store}>
+    <Login />
+  </Provider>)
   expect(UserService).toHaveBeenCalled();
   setTimeout(() => {
     expect(mockGetUserService).toHaveBeenCalledWith();
@@ -107,18 +101,4 @@ it('should render Button@0', () => {
      </Provider>
    );
   expect(wrapper.find('Button').at(0).simulate("click"))
-});
-
-
-it("should click login button", async () => {
-   const wrapper = mount(
-     <Provider
-       store={store}
-       getUserProfileAction={getUserProfileAction}
-       getUserProfileActionSuccess={getUserProfileActionSuccess}
-     >
-       <Login />
-     </Provider>
-   );
-  wrapper.find("Button#loginButton").simulate("click");
 });
