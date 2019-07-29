@@ -78,10 +78,6 @@ input::placeholder {
   margin-bottom: 15px;
 }
 
-/* .userName {
-  width: 49%;
-} */
-
 .userName,
 .password {
   width: 100%;
