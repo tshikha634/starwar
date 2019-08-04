@@ -11,6 +11,7 @@ Enzyme.configure({ adapter: new Adapter() });
  
 let INITIAL_STATE = {
   data: [],
+  flag:false
 };
 
 
@@ -19,6 +20,7 @@ it("Should set flag", () => {
   let action = {
     type: USER_PROFILE_SUCCESS,
     Data: { Dataa },
+    flag:true
   };
   let newState = userProfileReducer(INITIAL_STATE, action);
   console.log(newState.Data)

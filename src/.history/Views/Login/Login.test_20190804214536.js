@@ -39,7 +39,7 @@ const store = mockStore({
   },
 });
 
-it('should render Login Service', () => {
+it('should render Login', () => {
    const wrapper = mount(
      <Provider
        store={store}
@@ -56,7 +56,7 @@ it('should render Login Service', () => {
   }, 20)
 });
 
-it('should return label length', () => {
+it('should render Login', () => {
  const wrapper = mount(
    <Provider
      store={store}
@@ -70,7 +70,7 @@ it('should return label length', () => {
   expect(wrapper.find('label')).toHaveLength(2)
 });
 
-it('should return input length', () => {
+it('should render Login', () => {
    const wrapper = mount(
      <Provider
        store={store}
@@ -128,21 +128,8 @@ it("should click login button", async () => {
   wrapper.find("Button#loginButton").simulate("click");
 });
 
-it("should click login button", async () => {
-  const wrapper = mount(
-    <Provider
-      store={store}
-      history={historyMock}
-      getUserProfileAction={getUserProfileAction}
-      getUserProfileActionSuccess={getUserProfileActionSuccess}
-    >
-      <Login />
-    </Provider>
-  );
-  wrapper.instance().validateForm;
-});
 
-it("should render button@0 text props", () => {
+it("should render span@0 text props", () => {
    const wrapper = mount(
      <Provider
        store={store}

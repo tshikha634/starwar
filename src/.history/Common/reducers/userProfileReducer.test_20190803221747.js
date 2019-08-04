@@ -18,9 +18,9 @@ it("Should set flag", () => {
   let Dataa = { data: [] };
   let action = {
     type: USER_PROFILE_SUCCESS,
-    Data: { Dataa },
+    Data: { Dataa }
   };
   let newState = userProfileReducer(INITIAL_STATE, action);
-  console.log(newState.Data)
+  console.log(newState)
   expect(newState.Data).toBe(Dataa);
 });

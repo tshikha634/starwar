@@ -6,6 +6,7 @@ import { mount } from 'enzyme';
 import UserService from "../../Services/user/user";
 import configureMockStore from "redux-mock-store";
 import { Provider } from "react-redux";
+
 Enzyme.configure({ adapter: new Adapter() });
 
 jest.mock('react-router-dom')
@@ -39,7 +40,7 @@ const store = mockStore({
   },
 });
 
-it('should render Login Service', () => {
+it('should render Login', () => {
    const wrapper = mount(
      <Provider
        store={store}
@@ -56,11 +57,10 @@ it('should render Login Service', () => {
   }, 20)
 });
 
-it('should return label length', () => {
+it('should render Login', () => {
  const wrapper = mount(
    <Provider
      store={store}
-     history={historyMock}
      getUserProfileAction={getUserProfileAction}
      getUserProfileActionSuccess={getUserProfileActionSuccess}
    >
@@ -70,11 +70,10 @@ it('should return label length', () => {
   expect(wrapper.find('label')).toHaveLength(2)
 });
 
-it('should return input length', () => {
+it('should render Login', () => {
    const wrapper = mount(
      <Provider
        store={store}
-       history={historyMock}
        getUserProfileAction={getUserProfileAction}
        getUserProfileActionSuccess={getUserProfileActionSuccess}
      >
@@ -88,7 +87,6 @@ it('should call  Inpu@12', () => {
    const wrapper = mount(
      <Provider
        store={store}
-       history={historyMock}
        getUserProfileAction={getUserProfileAction}
        getUserProfileActionSuccess={getUserProfileActionSuccess}
      >
@@ -103,7 +101,6 @@ it('should render Button@0', () => {
    const wrapper = mount(
      <Provider
        store={store}
-       history={historyMock}
        getUserProfileAction={getUserProfileAction}
        getUserProfileActionSuccess={getUserProfileActionSuccess}
      >
@@ -128,21 +125,8 @@ it("should click login button", async () => {
   wrapper.find("Button#loginButton").simulate("click");
 });
 
-it("should click login button", async () => {
-  const wrapper = mount(
-    <Provider
-      store={store}
-      history={historyMock}
-      getUserProfileAction={getUserProfileAction}
-      getUserProfileActionSuccess={getUserProfileActionSuccess}
-    >
-      <Login />
-    </Provider>
-  );
-  wrapper.instance().validateForm;
-});
 
-it("should render button@0 text props", () => {
+it("should render span@0 text props", () => {
    const wrapper = mount(
      <Provider
        store={store}
@@ -153,5 +137,14 @@ it("should render button@0 text props", () => {
        <Login />
      </Provider>
    );
-  expect(wrapper.find("Button#loginButton").props());
+  expect(wrapper.find("Button#loginButton").props();
+});
+
+it("should simulate span@0", () => {
+  expect(
+    wrapper
+      .find("Button#loginButton")
+      .props()
+      ["onClick"](store)
+  );
 });

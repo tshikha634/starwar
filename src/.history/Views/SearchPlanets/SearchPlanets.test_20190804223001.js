@@ -14,9 +14,9 @@ jest.mock("react-router-dom");
 
 const mockGetResults = jest.fn();
 const handleChange = jest.fn();
-
+const onSearchClick = jest.fn();
 const onClear = jest.fn();
-
+const onChange = jest.fn();
 const redirectToCreate = jest.fn();
 
 mockGetResults.mockReturnValue({
@@ -74,3 +74,18 @@ it("check Modal exist with props", () => {
   expect(wrapper.find("Modal").exists()).toBe(true);
 });
 
+it("check Modal exist with props", () => {
+  const wrapper = mount(
+    <Provider store={store}>
+      <SearchPlanets success={true} />
+    </Provider>
+  );
+  console.log(wrapper)
+  
+  let childWrapper = wrapper
+    .find("#onclickLink")
+    .at(1)
+    .simulate("click");
+
+  expect(childWrapper.redirectToCreate).toHaveBeenCalled();
+});

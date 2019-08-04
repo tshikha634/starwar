@@ -2,6 +2,7 @@ import {USER_PROFILE, USER_PROFILE_SUCCESS, USER_PROFILE_FAILURE} from '../actio
 
 const INITIAL_STATE = {
   data: [],
+  flag: false
 };
 
 const userProfileReducer = (state = INITIAL_STATE, action) => {
@@ -10,6 +11,7 @@ switch (action) {
     return {
       ...state,
       data: action.Data.data,
+      flag: true
     };
   }
  

@@ -74,3 +74,30 @@ it("check Modal exist with props", () => {
   expect(wrapper.find("Modal").exists()).toBe(true);
 });
 
+it("check Modal exist with props", () => {
+  const onSearchClick = jest.fn();
+  const wrapper = mount(
+    <Provider store={store}>
+      <SearchPlanets success={true} />
+    </Provider>
+  );
+     wrapper.instance().onSearchClick();
+});
+
+it("check Pagination onChange", () => {
+  const onChangePage = jest.fn();
+  const wrapper = mount(
+    <Provider store={store}>
+      <SearchPlanets success={true} />
+    </Provider>
+  );
+  const pages = "25";
+  onChangePage(pages);
+  expect(onChangePage).toHaveBeenCalledWith(pages);
+  wrapper
+    .find(Pagination)
+    .props()
+    .onChangePage(pages);
+  wrapper.find(Pagination).props().value = pages;
+  expect(wrapper.find(Pagination).props().value).toBe(pages);
+});

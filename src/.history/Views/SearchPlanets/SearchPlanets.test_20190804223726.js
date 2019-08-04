@@ -13,11 +13,11 @@ Enzyme.configure({ adapter: new Adapter() });
 jest.mock("react-router-dom");
 
 const mockGetResults = jest.fn();
-const handleChange = jest.fn();
-
-const onClear = jest.fn();
-
-const redirectToCreate = jest.fn();
+// const handleChange = jest.fn();
+// const onSearchClick = jest.fn();
+// const onClear = jest.fn();
+// const onChange = jest.fn();
+// const redirectToCreate = jest.fn();
 
 mockGetResults.mockReturnValue({
   success: true,
@@ -74,3 +74,28 @@ it("check Modal exist with props", () => {
   expect(wrapper.find("Modal").exists()).toBe(true);
 });
 
+it("check Modal exist with props", () => {
+  const wrapper = mount(
+    <Provider store={store}>
+      <SearchPlanets success={true} />
+    </Provider>
+  );
+     wrapper.instance().onSearchClick();
+});
+
+it("check Pagination onChange", () => {
+  const wrapper = mount(
+    <Provider store={store}>
+      <SearchPlanets success={true} />
+    </Provider>
+  );
+  const pages = "25";
+  onChangePage(pages);
+  expect(onChangePage).toHaveBeenCalledWith(pages);
+  wrapper
+    .find(Pagination)
+    .props()
+    .onChangePage(pages);
+  wrapper.find(Pagination).props().value = pages;
+  expect(wrapper.find(Pagination).props().value).toBe(pages);
+});
