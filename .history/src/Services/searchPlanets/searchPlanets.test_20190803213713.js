@@ -29,6 +29,7 @@ it("should check url", async () => {
   let search = new searchPlanets();
   let headers = "Content-Type/json";
   let params = `page=1`;
+  console.log(search.getPlanetsByName(global.fetch()));
   expect(
     search.getPlanetsByName(
       `https://swapi.co/api/planets/?search${params}`,
