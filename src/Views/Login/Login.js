@@ -60,6 +60,7 @@ export class Login extends Component {
       return this.setState({
         isValid: false,
         customError: "Fields are required",
+        // flag: false
       });
     }else{
     let result = await this.UserService.validate(this.state.UserName,this.state.password);
@@ -69,6 +70,7 @@ export class Login extends Component {
             this.setState({
               isValid: true,
               customError: "",
+              // flag: true
             });
             this.props.getUserProfileActionSuccess(result.data);
             this.props.history.push("./searchplanets");

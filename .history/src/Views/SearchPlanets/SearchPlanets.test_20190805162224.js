@@ -66,3 +66,13 @@ it('should set current page number', () => {
  wrapper.find("Button#searchClick").first();
 })
 
+it('should set current page number', () => {
+  const wrapper = mount(<Provider store={store}>
+    <SearchPlanets success={true} />
+  </Provider>)
+let varState = { showPopup: false };
+let childWrapper = wrapper.find(SearchPlanets);
+childWrapper.setState(varState);
+childWrapper.instance().onCloseButton();
+expect(childWrapper.state("showPopup")).toBe(false);
+  })

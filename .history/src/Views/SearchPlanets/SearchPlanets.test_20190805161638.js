@@ -65,4 +65,3 @@ it('should set current page number', () => {
   </Provider>)
  wrapper.find("Button#searchClick").first();
 })
-

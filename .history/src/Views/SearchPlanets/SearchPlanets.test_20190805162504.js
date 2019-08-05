@@ -66,3 +66,12 @@ it('should set current page number', () => {
  wrapper.find("Button#searchClick").first();
 })
 
+it('should set current page number', () => {
+  const showPopup = { showPopup: "false" };
+  const closeModal = jest.fn();
+  const wrapper = mount(<Provider store={store}>
+    <SearchPlanets success={true} />
+  </Provider>)
+// let childWrapper = wrapper.find(<SearchPlanets/>);
+wrapper.instance().closeModal();
+  })

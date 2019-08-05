@@ -8,9 +8,9 @@ const userProfileReducer = (state = INITIAL_STATE, action) => {
 switch (action) {
   case USER_PROFILE_SUCCESS: {
     return {
-      ...state,
-      data: action.Data.data,
-    };
+      // ...state,
+      data : action.Data.data,
+    }
   }
  
   default:
